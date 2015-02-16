@@ -8,10 +8,20 @@
         Polymer('at-core-data-sample', {            
             data: {},
 			domReady: function() {
+			  
+			  var designer = false;
+
+				// parent component running directly in designer
+			  if (this.parentNode.id) {
+			    if (this.parentNode.id == "design_host") designer = true;
+			  }
 				
-				// exit if parent component is not running directly in designer
-				if(!this.parentNode.id || !this.parentNode.id=="design_host") return;
-				
+			  // preview window
+			  if (window.location.pathname.indexOf("adenin.PolymerDesigner/Polymer/Preview") > 0) designer = true;
+			  
+        // don't do anything outside of the designer
+				if (!designer) return;
+
 				// get sample data 
 				var txt = this.innerHTML.trim();
 				if(!txt) return;
