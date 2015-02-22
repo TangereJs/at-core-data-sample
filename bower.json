@@ -2,6 +2,7 @@
   "name": "at-core-data-sample",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#master"
+    "polymer": "Polymer/polymer#master",
+	"strip-json-comments": "TangereJs/strip-json-comments#master"
   }
 }
