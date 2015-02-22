@@ -1,6 +1,5 @@
 <link rel="import" href="../strip-json-comments/strip-json-comments.html">
 
-
 <polymer-element name="at-core-data-sample" attributes="data">
   <template>
 
@@ -14,8 +13,10 @@
         var designer = false;
 
         // parent component running directly in designer
-        if (this.parentNode.id) {
-          if (this.parentNode.id == "design_host") designer = true;
+        if (this.parentNode) {
+          if (this.parentNode.id) {
+            if (this.parentNode.id == "design_host") designer = true;
+          }
         }
 
         // preview window
